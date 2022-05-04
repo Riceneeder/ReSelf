@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 95%;min-height: 600px;min-width: 1200px;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/layui@2.6.8/dist/css/layui.css">
+    <title>Document</title>
+</head>
+<style>
+    *::-webkit-scrollbar{
+        display: none;
+    }
+</style>
+<body
+    style="height: 100%;background-image:url('/public/img/bg.jpg')">
+    <xy-layout center style="height:100%;">
+
+        <xy-layout row 
+            style="border-radius: 10px;height: 80%;width: 60%;padding: 20px;backdrop-filter: blur(50px);background-color: rgba(252, 252, 252, 0.267);">
+            <xy-row gutter="10" style="width: 100%;">
+                <xy-col span="8" class="bot-info">
+                    <xy-layout style="height: 20%;">
+                        <xy-img style="border-radius: 5px;" src="http://q1.qlogo.cn/g?b=qq&nk=845541909&s=640"
+                            defaultsrc="https://newssrc.onlinedown.net/d/file/20190813/d37d7692aca90780d8d346e938fd9fda.png"
+                            fit="cover" ratio="3/1"></xy-img>
+                    </xy-layout>
+                    <xy-layout style="height: 10%;white-space: normal;word-wrap: break-word;">
+                        登录账号
+                    </xy-layout>
+                    <div style="height: 45%;backdrop-filter: blur(50px);background-color: rgba(252, 252, 252, 0.267);border-radius: 5px;">
+                        <xy-icon name="message" size="30"></xy-icon>
+                        <div style="height: 84%;" id="danmuku"></div>
+                        <!-- danmuku -->
+                    </div>
+                    <xy-layout style="height: 20%;" center>
+                        <xy-button-group>
+                            <xy-tips dir="bottom" tips="下次登录需要重新扫码" type="warning">
+                                <xy-button type="danger">
+                                    清除账号信息并登出 <xy-icon name="export" size="30"></xy-icon>
+                                </xy-button>
+                            </xy-tips>
+                            <xy-button type="dashed">
+                                登出 <xy-icon name="export" size="30"></xy-icon>
+                            </xy-button>
+                        </xy-button-group>
+                    </xy-layout>
+                </xy-col>
+                <xy-col span="16" class="bot-control">
+                    <xy-tab>
+                        <xy-tab-content label="好友" icon="user" style="overflow: auto;height: 420px;">
+                                <xy-row gutter="10" id="friend-list-box" >
+                                    <!-- 好友列表 -->
+                                </xy-row>
+                        </xy-tab-content>
+                        <xy-tab-content label="群组" icon="team" style="overflow: auto;height: 420px;">
+                            <xy-row gutter="10" id="group-list-box">
+                                <!-- 群列表 -->
+                            </xy-row>
+                        </xy-tab-content>
+                        <xy-tab-content label="插件管理" icon="control" style="overflow: auto;height: 420px;">
+                            <xy-row gutter="10" id="plugin-list-box">
+                                <!-- 插件列表 -->
+                            </xy-row>
+                        </xy-tab-content>
+                        <xy-tab-content label="插件商店" icon="cloud-download" disabled style="overflow: auto;height: 420px;">插件商店</xy-tab-content>
+                        <xy-tab-content label="关于" icon="heart" style="overflow: auto;height: 420px;">关于</xy-tab-content>
+                    </xy-tab>
+                </xy-col>
+            </xy-row>
+        </xy-layout>
+
+    </xy-layout>
+    <script type="module" src="/public/xy-ui/index.js"></script>
+    <script src="https://unpkg.com/js-bullets@latest/dist/BulletJs.min.js"></script>
+    <script src="https://unpkg.com/layui@2.6.8/dist/layui.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/public/script/index.js"></script>
+</body>
+
+</html>
